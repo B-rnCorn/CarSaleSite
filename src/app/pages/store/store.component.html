@@ -1,1 +1,18 @@
-<p>store works!</p>
+<div class="col-md-12">
+  <nb-card>
+    <nb-card-header>Window Scroll</nb-card-header>
+    <nb-list
+      nbInfiniteList
+      listenWindowScroll
+      [threshold]="500"
+      (bottomThreshold)="loadNext(card)">
+      <nb-list-item *ngFor="let productPost of card.products">
+        <app-product-post [post]="productPost"></app-product-post>
+      </nb-list-item>
+      <nb-list-item *ngFor="let cardPlaceholder of card.placeholders">
+        <app-product-post-placeholder></app-product-post-placeholder>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+</div>
+

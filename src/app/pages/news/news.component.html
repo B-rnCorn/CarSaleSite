@@ -1,4 +1,5 @@
-<!--<nb-tabset fullWidth>
+<!--
+<nb-tabset fullWidth>
   <nb-tab tabTitle="News #1">
     <nb-card size="medium">
       <nb-card-header>Card 1</nb-card-header>
@@ -15,5 +16,48 @@
     </nb-card>
   </nb-tab>
 </nb-tabset>
-<button nbButton>To store</button>-->
+<button nbButton>To store</button>
+-->
+<ngb-carousel>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+    </div>
+  </div>
+</div>
+
+
+
 

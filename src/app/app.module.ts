@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
 // import { NewsComponent } from './pages/news/news.component';
 import {ContactUsModule} from './pages/contact-us/contact-us.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {StoreModule} from './pages/store/store.module';
 // import {MenuServiceComponent} from './pages/menu-service.component';
 
 @NgModule({
@@ -36,27 +38,28 @@ import {ContactUsModule} from './pages/contact-us/contact-us.module';
     NbListModule,
     PagesModule,
     NewsModule,
+    StoreModule,
     ContactUsModule,
     NbCardModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
-
           baseEndpoint: '',
           login: {
-            // ...
-            endpoint: '/api/auth/login',
+            endpoint: '/auth/login',
+            method: 'post',
           },
           register: {
-            // ...
-            endpoint: '/api/auth/register',
+            endpoint: '/auth/register',
+            method: 'post',
           },
         }),
       ],
       forms: {},
     }),
     NbIconModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

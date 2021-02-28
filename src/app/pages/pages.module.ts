@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {NbLayoutModule, NbMenuItem, NbMenuModule, NbSidebarModule} from '@nebular/theme';
+import {NbCardModule, NbLayoutModule, NbListModule, NbMenuItem, NbMenuModule, NbSidebarModule} from '@nebular/theme';
 
 // import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -22,6 +22,8 @@ import { StoreComponent } from './store/store.component';
     // ThemeModule,
     NbLayoutModule,
     NbSidebarModule,
+    NbCardModule,
+    NbListModule,
     /*
     DashboardModule,
     ECommerceModule,
@@ -29,10 +31,9 @@ import { StoreComponent } from './store/store.component';
   ],
   declarations: [
     PagesComponent,
-    StoreComponent,
   ],
   exports: [
-    PagesComponent
+    PagesComponent,
   ]
 })
 export class PagesModule {

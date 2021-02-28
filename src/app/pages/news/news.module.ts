@@ -13,6 +13,8 @@ import {
 
 import { NewsComponent } from './news.component';
 import {PagesRoutingModule} from '../pages-routing.module';
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -28,13 +30,18 @@ import {PagesRoutingModule} from '../pages-routing.module';
     NbAccordionModule,
     NbUserModule,
     PagesRoutingModule,
+    NgbModule,
+    NgbCarouselModule
   ],
   declarations: [
-     NewsComponent,
+    NewsComponent,
   ],
   providers: [],
   exports: [
-     NewsComponent
+    NewsComponent,
+  ],
+  bootstrap: [
+    NewsComponent,
   ]
 })
 export class NewsModule {}
