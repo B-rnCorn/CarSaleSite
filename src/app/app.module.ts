@@ -15,6 +15,10 @@ import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
 import {ContactUsModule} from './pages/contact-us/contact-us.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {StoreModule} from './pages/store/store.module';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import { environment } from '../environments/environment';
 // import {MenuServiceComponent} from './pages/menu-service.component';
 
 @NgModule({
@@ -60,8 +64,10 @@ import {StoreModule} from './pages/store/store.module';
     }),
     NbIconModule,
     NgbModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+    AkitaNgRouterStoreModule,
   ],
-  providers: [],
+  providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

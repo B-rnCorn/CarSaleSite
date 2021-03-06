@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import {ProductService} from './product.service';
+import {CarService} from './car.service';
 
 @Component({
   selector: 'app-store',
