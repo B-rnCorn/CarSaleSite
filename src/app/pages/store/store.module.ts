@@ -9,7 +9,7 @@ import {
 
 import { ProductPostComponent } from './product-post/product-post.component';
 import { ProductPostPlaceholderComponent } from './product-post-placeholder/product-post-placeholder.component';
-import { ProductService } from './product.service';
+import { CarService } from './state/car.service';
 import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent} from './store.component';
 import {CommonModule} from '@angular/common';
@@ -32,7 +32,7 @@ import {CommonModule} from '@angular/common';
     ProductPostComponent,
   ],
   providers: [
-    ProductService,
+    CarService,
   ],
   bootstrap: [
     StoreComponent,

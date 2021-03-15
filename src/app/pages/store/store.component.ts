@@ -1,13 +1,14 @@
-import { Component} from '@angular/core';
-import {ProductService} from './product.service';
-import {CarService} from './car.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {CarService} from './state/car.service';
+import {CarQuery} from './state/car.query';
+import {CarStore} from './state/car.store';
 
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss']
 })
-export class StoreComponent{
+export class StoreComponent implements OnInit, OnDestroy {
   card = {
     products: [],
     placeholders: [],
@@ -16,14 +17,18 @@ export class StoreComponent{
   };
   pageSize = 10;
 
-  constructor(private productService: ProductService) {}
-  loadNext(cardData): void {
-    if (cardData.loading) { return; }
+  constructor(private carQuery: CarQuery, private  carService: CarService) {
+  }
 
+  loadNext(cardData): void {
+    if (cardData.loading) {
+      return;
+    }
     cardData.loading = true;
     console.log(cardData);
     cardData.placeholders = new Array(this.pageSize);
-    this.productService.load(cardData.pageToLoadNext, this.pageSize)
+    console.log(this.carQuery.hasEntity());
+    this.carQuery.selectAll()
       .subscribe(nextProduct => {
         console.log(cardData);
         cardData.placeholders = [];
@@ -31,5 +36,13 @@ export class StoreComponent{
         cardData.loading = false;
         cardData.pageToLoadNext++;
       });
+  }
+
+  ngOnInit(): void {
+    this.carService.load().subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.carService.clearStore();
   }
 }

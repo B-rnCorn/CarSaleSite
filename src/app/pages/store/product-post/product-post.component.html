@@ -1,6 +1,12 @@
 <article>
-  <h2>Car Name: {{post.name}}</h2>
+  <h2>{{post.name}}</h2>
   <p>Licence Plate: {{post.licencePlate}}</p>
   <p>Cost: {{post.cost}}</p>
-  <a [attr.href]="post.link">Read full article</a>
+    <span class="col-md-6">
+      <a [attr.href]="post.link"></a>
+      <button button type="button" class="btn btn-success">Buy</button>
+    </span>
+    <span class="col-md-6">
+      <button type="button" class="btn btn-primary">Read more...</button>
+    </span>
 </article>

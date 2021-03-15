@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-import { CarPost } from '../product.service';
+import { CarPost } from '../state/car.service';
 
 @Component({
   selector: 'app-product-post',

@@ -1,7 +1,6 @@
-import {ID} from '@datorama/akita';
 
 export type CarModel = {
-  id: ID;
+  id: number;
   name: string;
   typeBody: string;
   numDoors: number;
