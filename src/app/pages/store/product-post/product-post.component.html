@@ -1,12 +1,11 @@
 <article>
-  <h2>{{post.name}}</h2>
-  <p>Licence Plate: {{post.licencePlate}}</p>
-  <p>Cost: {{post.cost}}</p>
+  <h2>{{post.brand}}</h2>
+  <p>Model: {{post.model}}</p>
+  <p>Cost: {{post.price}}</p>
     <span class="col-md-6">
-      <a [attr.href]="post.link"></a>
       <button button type="button" class="btn btn-success">Buy</button>
     </span>
     <span class="col-md-6">
-      <button type="button" class="btn btn-primary">Read more...</button>
+      <button type="button" class="btn btn-primary" [routerLink]="post.link">Read more...</button>
     </span>
 </article>

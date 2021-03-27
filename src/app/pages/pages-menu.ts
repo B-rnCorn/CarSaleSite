@@ -6,15 +6,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true
   },
   {
+    title: 'Home page',
+    icon: 'home-outline',
+    link: '/pages/news',
+    home: true,
+  },
+  {
     title: 'Store',
-    icon: 'shopping-cart-outline',
+    icon:  'shopping-bag-outline', // 'shopping-cart-outline',
     link: '/pages/store',
     // home: true,
   },
   {
-    title: 'Home page',
-    icon: 'home-outline',
-    link: '/pages/news',
+    title: 'Basket',
+    icon: 'shopping-cart-outline',
+    link: '/pages/basket',
   },
   {
     title: 'Settings',

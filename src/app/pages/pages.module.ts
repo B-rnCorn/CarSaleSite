@@ -10,13 +10,13 @@ import { NewsComponent } from './news/news.component';
 import {NewsModule} from './news/news.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StoreComponent } from './store/store.component';
+import { BasketComponent } from './basket/basket.component';
 // import {ThemeModule} from '../@theme/theme.module';
 // import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
 @NgModule({
   imports: [
     PagesRoutingModule,
-    // ThemeModule,
     NbMenuModule,
     NewsModule,
     // ThemeModule,
@@ -31,6 +31,7 @@ import { StoreComponent } from './store/store.component';
   ],
   declarations: [
     PagesComponent,
+    BasketComponent,
   ],
   exports: [
     PagesComponent,

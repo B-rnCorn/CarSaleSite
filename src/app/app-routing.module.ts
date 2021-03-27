@@ -9,6 +9,8 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import {RegisterComponent} from './auth/register/register.component';
+import {LoginComponent} from './session/login/login.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +20,9 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
+    // loadChildren: './auth/auth.module#NgxAuthModule',
+    loadChildren: () => import('./auth/auth.module').then(m => m.NgxAuthModule),
+    /*
     component: NbAuthComponent,
     children: [
       {
@@ -31,6 +36,8 @@ export const routes: Routes = [
       {
         path: 'register',
         component: NbRegisterComponent,
+        // loadChildren: './auth/auth.module#NgxAuthModule',
+        // component: RegisterComponent,
       },
       {
         path: 'logout',
@@ -45,11 +52,11 @@ export const routes: Routes = [
       {
         path: 'reset-password',
         component: NbResetPasswordComponent,
-      },*/
-    ],
+      },
+    ],*/
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'pages/news', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages/news' },
 ];
 
 @NgModule({

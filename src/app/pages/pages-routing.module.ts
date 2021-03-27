@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import {NewsComponent} from './news/news.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {StoreComponent} from './store/store.component';
+import {FormComponent} from './form/form.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 // import { ECommerceComponent } from './e-commerce/e-commerce.component';
 // import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
@@ -15,7 +16,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'news',
-      component : NewsComponent
+      component : NewsComponent,
       // loadChildren: () => import('./news/news.module')
       //  .then(m => m.NewsModule),
     },
@@ -27,6 +28,10 @@ const routes: Routes = [{
       path: 'store',
       component : StoreComponent
     },
+    {
+      path: 'basket',
+      component: FormComponent
+    }
   ],
 }];
 
