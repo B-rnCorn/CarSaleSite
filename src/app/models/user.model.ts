@@ -10,7 +10,7 @@ export type UserModel = {
   active: boolean;
 };
 
-export function createUserModel({id, first_name, last_name, phone, email, password, active}: Partial<UserModel>): UserModel{
+export function createUserModel({ id, first_name, last_name, phone, email, password, active}: Partial<UserModel>): UserModel{
   return {
     id,
     first_name,

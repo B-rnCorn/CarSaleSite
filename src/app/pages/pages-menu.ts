@@ -18,6 +18,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     // home: true,
   },
   {
+    title: 'Profile',
+    icon:  'person-outline',
+    // link: '/pages/store',
+  },
+  {
     title: 'Basket',
     icon: 'shopping-cart-outline',
     link: '/pages/basket',

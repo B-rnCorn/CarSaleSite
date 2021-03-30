@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 import {UserModel} from '../../models/user.model';
+import {Session} from '../../models/session';
 
 export interface AuthState {
   user: UserModel;
@@ -22,7 +23,7 @@ export class AuthStore extends Store<AuthState> {
     super(createInitialSessionState());
   }
 
-  login(session: unknown) {
+  login(session: Session) {
     this.update(session);
   }
 

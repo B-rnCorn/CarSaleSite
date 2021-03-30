@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CarService} from './state/car.service';
 import {CarQuery} from './state/car.query';
+import {SessionQuery} from '../../auth/state/auth.query';
 import {CarStore} from './state/car.store';
 
 @Component({
@@ -17,7 +18,7 @@ export class StoreComponent implements OnInit, OnDestroy {
   };
   pageSize = 10;
 
-  constructor(private carQuery: CarQuery, private  carService: CarService) {
+  constructor(private carQuery: CarQuery, private  carService: CarService, private sessionQuery: SessionQuery) {
   }
 
   loadNext(cardData): void {
@@ -44,5 +45,12 @@ export class StoreComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.carService.clearStore();
+  }
+  isLoggedIn(): boolean{
+    return this.sessionQuery.isLoggedIn();
+  }
+  getLoggedUserName(): string{
+    console.log(this.sessionQuery.getLoggedUser().first_name);
+    return this.sessionQuery.getLoggedUser().first_name;
   }
 }

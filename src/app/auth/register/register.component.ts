@@ -38,11 +38,11 @@ export class RegisterComponent{
       {id: 100,
         email: this.email,
         password: this.password,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        isManager: false,
+        first_name: this.firstName,
+        last_name: this.lastName,
+        active: false,
         phone: this.phoneNumber
       });
-    this.authService.registerUser({}as UserModel);
+    this.authService.registerUser(this.user);
   }
 }

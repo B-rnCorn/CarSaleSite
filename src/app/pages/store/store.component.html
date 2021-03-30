@@ -1,6 +1,7 @@
+<h1 *ngIf="isLoggedIn()">Welcome {{getLoggedUserName()}}!</h1>
 <div class="col-md-12">
   <nb-card>
-    <nb-card-header>Selling cars</nb-card-header>
+    <nb-card-header>Our Selling Cars</nb-card-header>
     <nb-list
       nbInfiniteList
       listenWindowScroll
