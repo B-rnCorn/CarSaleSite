@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AuthStore } from './auth.store';
 import {catchError, tap} from 'rxjs/operators';
 import {NbAuthJWTToken, NbAuthResult, NbAuthService, NbAuthToken, NbPasswordAuthStrategy} from '@nebular/auth';
-import {AuthToken} from '../auth-token';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {createSession, Session} from '../../models/session';
 import {Observable, throwError} from 'rxjs';
