@@ -3,9 +3,9 @@
   <p>Model: {{post.model}}</p>
   <p>Cost: {{post.price}}</p>
     <span class="col-md-6">
-      <button button type="button" class="btn btn-success" [disabled]="!isLoggedIn()">Buy</button>
+      <button button type="button" class="btn btn-success" [disabled]="!isLoggedIn()" (click)="buyCar(post)">Buy</button>
     </span>
     <span class="col-md-6">
-      <button type="button" class="btn btn-primary" [routerLink]="post.link">Read more...</button>
+      <button type="button" class="btn btn-primary" [routerLink]="">Read more...</button>
     </span>
 </article>

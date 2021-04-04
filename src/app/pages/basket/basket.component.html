@@ -1,3 +1,39 @@
-<div class="col-md-12">
-  <p>basket works!</p>
+<div class="container-md">
+  <div class="row">
+  <div class="col-md"></div>
+  <div class="col-md">
+    <h2 *ngIf="!basketLoad">Your basket is empty!</h2>
+  </div>
+  <div class="col-md"></div>
+  </div>
+  <div>
+    <nb-card *ngIf="basketLoad">
+      <ng-container *ngFor="let basketCar of basketCars">
+        <nb-list-item>
+          <article>
+            <div>
+              <span>
+                <h2>{{basketCar.brand}}</h2>
+                <p>Model: {{basketCar.model}}</p>
+                <p>Cost: {{basketCar.price}}</p>
+              </span>
+            </div>
+            <div>
+            <span class="col-md-6">
+              <button button type="button" class="btn btn-success" (click)="removeFromBasket(basketCar.id)">Remove</button>
+            </span>
+            </div>
+          </article>
+        </nb-list-item>
+      </ng-container>
+    </nb-card>
+    <div class="row">
+      <div class="col-md-5"></div>
+
+      <div class="col-md-1">
+        <button (click)="load()" [disabled]="!isLoggedIn()" class="btn btn-primary btn-outline-basic btn_refresh" >Refresh</button>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
 </div>

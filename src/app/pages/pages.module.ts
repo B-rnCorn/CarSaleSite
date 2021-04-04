@@ -11,6 +11,7 @@ import {NewsModule} from './news/news.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { StoreComponent } from './store/store.component';
 import { BasketComponent } from './basket/basket.component';
+import {CommonModule} from '@angular/common';
 // import {ThemeModule} from '../@theme/theme.module';
 // import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
@@ -24,6 +25,7 @@ import { BasketComponent } from './basket/basket.component';
     NbSidebarModule,
     NbCardModule,
     NbListModule,
+    CommonModule,
     /*
     DashboardModule,
     ECommerceModule,

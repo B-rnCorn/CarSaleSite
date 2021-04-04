@@ -6,6 +6,7 @@ import {NewsComponent} from './news/news.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {StoreComponent} from './store/store.component';
 import {FormComponent} from './form/form.component';
+import {BasketComponent} from './basket/basket.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 // import { ECommerceComponent } from './e-commerce/e-commerce.component';
 // import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
@@ -30,7 +31,7 @@ const routes: Routes = [{
     },
     {
       path: 'basket',
-      component: FormComponent
+      component: BasketComponent
     }
   ],
 }];
