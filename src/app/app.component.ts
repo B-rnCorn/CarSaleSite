@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MENU_ITEMS} from './pages/pages-menu';
+import {PagesModule} from './pages/pages.module';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CarSaleSite';
+  menu = MENU_ITEMS;
 }

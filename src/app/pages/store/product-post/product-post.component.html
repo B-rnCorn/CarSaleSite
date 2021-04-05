@@ -1,0 +1,21 @@
+<article>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>{{post.brand}}</h2>
+      <p>Model:&nbsp;{{post.model}}</p>
+      <p>Cost:&nbsp;{{post.price}}</p>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button button type="button" class="btn btn-success" [disabled]="!isLoggedIn()" (click)="buyCar(post)">Buy</button>
+    </div>
+    <div class="col-md-5">
+      <button type="button" class="btn btn-primary" [routerLink]="">Read&nbsp;more...</button>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary" [hidden]="!isAdmin()" (click)="removeCar(post)">Delete</button>
+    </div>
+  </div>
+</article>
