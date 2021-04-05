@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {NbLoginComponent} from '@nebular/auth';
 import {createUserModel, UserModel} from '../../models/user.model';
 import {AuthService} from '../state/auth.service';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import {AppRoutingModule, routes} from '../../app-routing.module';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,7 @@ export class LoginComponent{
   email: string;
   password: string;
   user: UserModel;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   login(email: string, password: string): void{
@@ -28,5 +31,9 @@ export class LoginComponent{
         phone: null
       });
     this.authService.login(this.user);
+    this.redirect();
+  }
+  redirect(): void{
+    this.router.navigate(['./pages/store']);
   }
 }

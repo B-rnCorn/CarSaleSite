@@ -55,6 +55,9 @@ export class CarService {
     );
   }
 
+  delete(carId: string): void {
+    this.carStore.remove(carId);
+  }
   deleteCar(carId: string): Observable<any> {
     return this.http.delete('/api/cars/' + carId).pipe(
       tap(result => {

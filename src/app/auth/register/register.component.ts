@@ -21,7 +21,7 @@ export class RegisterComponent{
   lastName: string;
   phoneNumber: string;
   user: UserModel;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   registerUser(email: string,
@@ -44,5 +44,9 @@ export class RegisterComponent{
         phone: this.phoneNumber
       });
     this.authService.registerUser(this.user);
+    this.redirect();
+  }
+  redirect(): void{
+    this.router.navigate(['./pages/store']);
   }
 }

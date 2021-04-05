@@ -7,6 +7,7 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {StoreComponent} from './store/store.component';
 import {FormComponent} from './form/form.component';
 import {BasketComponent} from './basket/basket.component';
+import {AdminGuard} from '../auth/guards/admin-guard';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 // import { ECommerceComponent } from './e-commerce/e-commerce.component';
 // import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
@@ -32,6 +33,13 @@ const routes: Routes = [{
     {
       path: 'basket',
       component: BasketComponent
+    },
+    {
+      path:  'admin-dashboard',
+      // component
+      component : ContactUsComponent,
+      canActivate: [AdminGuard],
+      canLoad: [AdminGuard],
     }
   ],
 }];
@@ -39,6 +47,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [AdminGuard]
 })
 export class PagesRoutingModule {
 }

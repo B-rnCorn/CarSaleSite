@@ -1,19 +1,31 @@
-<h1 *ngIf="isLoggedIn()">Welcome {{getLoggedUserName()}}!</h1>
-<div class="col-md-12">
+<div class="container-md">
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md">
+      <h1 *ngIf="isLoggedIn()">Welcome {{getLoggedUserName()}}!</h1>
+    </div>
+    <div class="col-md"></div>
+  </div>
   <nb-card>
-    <nb-card-header>Our Selling Cars</nb-card-header>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <nb-card-header>This&nbsp;is&nbsp;our&nbsp;selling&nbsp;cars</nb-card-header>
     <nb-list
       nbInfiniteList
       listenWindowScroll
       [threshold]="500"
       (bottomThreshold)="loadNext(card)">
-      <nb-list-item *ngFor="let productPost of card.products">
-        <app-product-post [post]="productPost"></app-product-post>
-      </nb-list-item>
-      <nb-list-item *ngFor="let cardPlaceholder of card.placeholders">
-        <app-product-post-placeholder></app-product-post-placeholder>
-      </nb-list-item>
+        <nb-list-item *ngFor="let productPost of card.products">
+          <app-product-post [post]="productPost"></app-product-post>
+        </nb-list-item>
+        <nb-list-item *ngFor="let cardPlaceholder of card.placeholders">
+          <app-product-post-placeholder></app-product-post-placeholder>
+        </nb-list-item>
     </nb-list>
+    </div>
+    <div class="col-md-5"></div>
+    </div>
   </nb-card>
 </div>
 
